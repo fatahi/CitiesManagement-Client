@@ -1,0 +1,28 @@
+<a class="btn btn-success" routerLink="/create-country" routerLinkActive="active-menu">add country</a>
+<div class="table-responsive">
+    <table class="table">
+      <thead class=" text-primary">
+        <th>
+          Id
+        </th>
+        <th>
+          Country
+        </th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of countryList">
+          <td>
+            {{item.id}}
+          </td>
+          <td>
+            {{item.countryName}}
+          </td>
+          <td>
+            <a class="edit" routerLink="/edit-country/{{item.id}}">Edit</a>
+            <a style="margin-left: 20px;cursor: pointer;" class="delete" (click)="deleteCountry(item.id)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

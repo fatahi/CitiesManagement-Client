@@ -1,0 +1,9 @@
+.table-responsive{
+    padding-bottom: 10px;
+    overflow:hidden;
+  }
+  .delete{
+    margin-left: 20px;
+    cursor: pointer;
+    color:#ff8080;
+  }
