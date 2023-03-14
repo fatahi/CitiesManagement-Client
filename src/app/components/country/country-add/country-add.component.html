@@ -1,0 +1,23 @@
+<div class="container custom-container">
+    <div class="col-md-6">
+      
+      <h4 class="mb-3 text-center">Create Country</h4>
+  
+<form #countryForm="ngForm" (ngSubmit)="submit(countryForm.value)">
+   
+    <div class="form-group">
+        <label for="countryName">Country Name</label>
+        <input required minlength="3" maxlength="64" ngModel name="countryName" type="text" #countryName="ngModel" class="form-control" id="countryName">
+        <div class="alert alert-danger">
+            <div >Country Name is required.</div>
+            <div >Country Name is minimum  character.</div>
+            <div >Country Name is maximum 64 character.</div>
+        </div>
+    </div>
+    
+      
+    <button class="btn btn-success btn-sm" type="submit" [class.disabled]="!countryForm.valid">Submit</button>
+        <a class="btn btn-primary btn-sm m-l-20"  routerLink="/countries" >Back To List</a>
+  </form>
+    </div>
+</div>

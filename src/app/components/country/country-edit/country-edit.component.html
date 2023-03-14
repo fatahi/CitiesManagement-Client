@@ -1,0 +1,15 @@
+<div class="container custom-container">
+    <div class="col-md-6">
+      
+      <h3 class="mb-3 text-center">Update Country</h3>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="countryData.countryName" class="form-control" placeholder="Name">
+      </div>
+      
+    <div class="form-group">
+        <button class="btn btn-success btn-sm" (click)="updateCountry()">Update Country</button>
+        <a class="btn btn-primary btn-sm m-l-20"  routerLink="/countries" >Back To List</a>
+      </div>
+    </div>
+  </div>

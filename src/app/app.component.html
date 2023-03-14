@@ -1,0 +1,109 @@
+<div class="sidebar" data-color="white" data-active-color="danger">
+  <div class="logo">
+    <a href="#" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="../assets/img/logo-small.png">
+      </div>
+      <!-- <p>CT</p> -->
+    </a>
+    <a href="#" class="simple-text logo-normal">
+      hamidreza fatahi
+      <!-- <div class="logo-image-big">
+        <img src="../assets/img/logo-big.png">
+      </div> -->
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li>
+        <a routerLink="" routerLinkActive="active-menu" [routerLinkActiveOptions]="{exact:true}">
+          <i class="nc-icon nc-bank"></i>
+          <p>Home</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/countries" routerLinkActive="active-menu">
+          <i class="nc-icon nc-diamond"></i>
+          <p>Countries</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cities" routerLinkActive="active-menu">
+          <i class="nc-icon nc-diamond"></i>
+          <p>Cities</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="main-panel">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <div class="navbar-toggle">
+          <button type="button" class="navbar-toggler">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+          </button>
+        </div>
+        <a class="navbar-brand" href="javascript:;">just do it!</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <form>
+          <div class="input-group no-border">
+            <input type="text" value="" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="nc-icon nc-zoom-split"></i>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav">
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> </h4>
+          </div>
+          <div class="card-body" style="min-height: 350px;">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="footer footer-black  footer-white ">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="footer-nav">
+          <ul>
+            
+          </ul>
+        </nav>
+        <div class="credits ml-auto">
+          <span class="copyright">
+            © <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="fa fa-heart heart"></i> by hamidreza fatahi
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

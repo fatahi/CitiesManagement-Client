@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="col-md-6">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="custom-select" (change)="selectCountryChangeHandler($event)" required formControlName="countryName" [ngClass]="{ 'is-invalid': submitted && f['countryName'].errors }">
+              <option value="" class="text-primary font-weight-bolder">
+                --- Select Country ---
+              </option>
+              <option *ngFor="let item of Countries" [value]="item.id">
+                {{item.countryName}}
+              </option>
+            </select>
+            <div class="alert alert-danger" *ngIf="submitted && f['countryName'].errors">
+              <div>Country Name is required.</div>
+          </div>
+        </div>
+
+       <div class="form-group">
+        <label for="picture">picture</label>
+          <input type="file" (change)="uploadFile($event)">
+       </div>
+ 
+       <div class="form-group input-group-lg">
+        <label for="cityName">City Name</label>
+          <input class="form-control" placeholder="City Name" formControlName="cityName" [ngClass]="{ 'is-invalid': submitted && f['cityName'].errors }">
+          <div *ngIf="submitted && f['cityName'].errors" class="alert alert-danger">
+            <div *ngIf="f['cityName'].errors['required']">cityName is required</div>
+            <div *ngIf="f['cityName'].errors['minlength']">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="f['cityName'].errors['maxlength']">
+              Username must not exceed 64 characters
+            </div>
+          </div>
+       </div>
+
+       <div class="form-group input-group-lg">
+        <label for="comment">Comment</label>
+        <textarea class="form-control" placeholder="Comment" rows="4" formControlName="comment"></textarea>
+     </div>
+
+     <div class="form-group input-group-lg">
+        <label for="attrctionFactor">Attraction Factor</label>
+        <select class="custom-select" (change)="selectChangeHandler($event)" formControlName="attrctionFactor" [ngClass]="{ 'is-invalid': submitted && f['attrctionFactor'].errors }">
+            <option value="0" class="text-primary font-weight-bolder">
+              --- Select Value ---
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <div class="alert alert-danger" *ngIf="submitted && f['attractionFactor'].errors">
+            <div>Attrction factor is required.</div>
+        </div>
+     </div>
+
+       <div class="form-group">
+        <button class="btn btn-success btn-sm" type="submit">Submit</button>
+        <button class="btn btn-info btn-sm" (click)="onReset()" type="button">Reset</button>
+        <a class="btn btn-primary btn-sm m-l-20"  routerLink="/cities" >Back To List</a>
+       </div>
+    </form>
+</div>
+ </div>
